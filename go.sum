@@ -14,8 +14,6 @@ github.com/nlopes/slack v0.0.2-0.20160430160449-e337a7316d3f h1:dJ5RYFKS0zpcXVI7
 github.com/nlopes/slack v0.0.2-0.20160430160449-e337a7316d3f/go.mod h1:jVI4BBK3lSktibKahxBF74txcK2vyvkza1z/+rRnVAM=
 github.com/voxelbrain/goptions v0.0.0-20151102231003-26cb8b046923 h1:9wj8kG7h9BFfuAGtEgtShrnTNY27UI/v6/RGEpue+LA=
 github.com/voxelbrain/goptions v0.0.0-20151102231003-26cb8b046923/go.mod h1:DGCIhurYgnLz8J9ga1fMV/fbLDyUvTyrWXVWUIyJon4=
-github.com/yosmudge/slackmood v0.0.0-20160827163541-596bc6397505 h1:cUVrbHff4v2usgjJqMO6cr+SLI/MjGTV70oKqPXXNJQ=
-github.com/yosmudge/slackmood v0.0.0-20160827163541-596bc6397505/go.mod h1:MT+8FFxn1eeMO542uUiihoD840/LqUcyUEry6vrxsg4=
 golang.org/x/net v0.0.0-20160126033523-f315505cf334 h1:TUmEkOSSnKLH69ouTtjMxfkRrhs65JmJ61O6KjDVgPg=
 golang.org/x/net v0.0.0-20160126033523-f315505cf334/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/sys v0.0.0-20201101102859-da207088b7d1 h1:a/mKvvZr9Jcc8oKfcmgzyp7OwF73JPWsQLvH1z2Kxck=
