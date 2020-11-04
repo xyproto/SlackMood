@@ -1,5 +1,3 @@
-/config.yml
-/db.bolt
-/emojiRanks/custom.csv
-/web/assets.go
-/slackmood
+config.yml
+db.bolt
+emojimood
