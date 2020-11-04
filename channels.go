@@ -11,7 +11,7 @@ var channelList []api.Channel
 func channels(s *Slack) {
 	log.Debug("Fetching channels")
 
-	chn, err := s.Api.GetChannels(false)
+	chn, err := s.API.GetChannels(false)
 	if err != nil {
 		log.WithFields(log.Fields{
 			"error": err,

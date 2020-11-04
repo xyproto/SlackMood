@@ -6,10 +6,10 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// Start the emoji collector
-// Connects to Slack and starts streaming all public channels
-func StartEmojiCollector() bool {
-	s, err := Connect()
+// StartEmojiCollector connects to Slack and
+// starts streaming all public channels
+func (config *Config) StartEmojiCollector() bool {
+	s, err := Connect(config)
 	if err != nil {
 		log.WithFields(log.Fields{
 			"error": err,

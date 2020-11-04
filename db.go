@@ -6,9 +6,10 @@ import (
 
 var db *bolt.DB
 
-func OpenDB() error {
+// OpenDB tries to open a Bolt DB file
+func (config *Config) OpenDB() error {
 	var err error
-	db, err = bolt.Open(Config.Db, 0600, nil)
+	db, err = bolt.Open(config.DBPath, 0600, nil)
 	if err != nil {
 		return err
 	}

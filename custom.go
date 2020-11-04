@@ -8,7 +8,7 @@ import (
 func customEmoji(s *Slack) {
 	log.Debug("Fetching custom emoji")
 
-	emoji, err := s.Api.GetEmoji()
+	emoji, err := s.API.GetEmoji()
 	if err != nil {
 		log.WithFields(log.Fields{
 			"error": err,

@@ -1,5 +1,6 @@
 package emojimood
 
+// UserEmojis represents emoji usage per user
 type UserEmojis struct {
 	User          string
 	Positive      float32

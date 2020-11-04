@@ -38,7 +38,7 @@ func getChannelHistory(s *Slack, c api.Channel, ts *time.Time, wg *sync.WaitGrou
 	hp := api.NewHistoryParameters()
 	hp.Oldest = strconv.FormatInt(ts.Unix(), 10)
 	hp.Count = 1000
-	h, err := s.Api.GetChannelHistory(c.ID, hp)
+	h, err := s.API.GetChannelHistory(c.ID, hp)
 
 	if err != nil {
 		log.WithFields(log.Fields{

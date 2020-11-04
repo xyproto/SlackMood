@@ -30,11 +30,11 @@ func percentage(a int32, b int32) float32 {
 }
 
 // GetMood returns the mood based on a slice of Emojis
-func GetMood(emoji []*Emoji) Mood {
+func (emojiRanks EmojiRanks) GetMood(emoji []*Emoji) Mood {
 	m := Mood{}
 
 	for _, e := range emoji {
-		for _, r := range EmojiRanks {
+		for _, r := range emojiRanks {
 			if r.Name == e.Name {
 				switch r.Rank {
 				case 1:
@@ -62,7 +62,7 @@ func GetMood(emoji []*Emoji) Mood {
 }
 
 // GraphMood creates a structure suitable for charting
-func GraphMood(over time.Duration, interval time.Duration) []Mood {
+func (emojiRanks EmojiRanks) GraphMood(over time.Duration, interval time.Duration) []Mood {
 	var points []Mood
 
 	now := time.Now().UTC()
@@ -73,7 +73,7 @@ func GraphMood(over time.Duration, interval time.Duration) []Mood {
 		offset := int(interval.Seconds()) * (dataPointCount - i)
 		startTime := endTime.Add(time.Second * time.Duration(offset) * -1)
 
-		m := GetMood(FilterEmoji(startTime, startTime.Add(interval), periodEmoji))
+		m := emojiRanks.GetMood(FilterEmoji(startTime, startTime.Add(interval), periodEmoji))
 		m.Time = startTime
 		m.TimeString = startTime.Format("Jan _2")
 		points = append(points, m)
