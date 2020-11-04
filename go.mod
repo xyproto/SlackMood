@@ -1,23 +1,27 @@
-module github.com/xyproto/slackmood
+module github.com/xyproto/emojimood
 
 go 1.15
 
 require (
-	github.com/Sirupsen/logrus v0.10.1-0.20160524132453-6d9ae300aaf8 // indirect
-	github.com/boltdb/bolt v1.2.1
-	github.com/gin-gonic/gin v0.0.0-20160525124545-f931d1ea80ae
-	github.com/golang/protobuf v0.0.0-20160106020635-2402d76f3d41 // indirect
-	github.com/hoisie/mustache v0.0.0-20141121162303-af524a16a1b1
-	github.com/manucorporat/sse v0.0.0-20160126180136-ee05b128a739 // indirect
+	github.com/boltdb/bolt v1.3.1
+	github.com/gin-gonic/gin v1.6.3
+	github.com/go-playground/validator/v10 v10.4.1 // indirect
+	github.com/golang/protobuf v1.4.3 // indirect
+	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/hoisie/mustache v0.0.0-20160804235033-6375acf62c69
+	github.com/json-iterator/go v1.1.10 // indirect
+	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
+	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
-	github.com/nlopes/slack v0.0.2-0.20160430160449-e337a7316d3f
+	github.com/nlopes/slack v0.6.0
+	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sirupsen/logrus v1.7.0
 	github.com/stretchr/testify v1.6.1 // indirect
-	github.com/voxelbrain/goptions v0.0.0-20151102231003-26cb8b046923
-	golang.org/x/net v0.0.0-20160126033523-f315505cf334 // indirect
+	github.com/ugorji/go v1.1.13 // indirect
+	github.com/voxelbrain/goptions v0.0.0-20180630082107-58cddc247ea2
+	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
 	golang.org/x/sys v0.0.0-20201101102859-da207088b7d1 // indirect
+	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
-	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
-	gopkg.in/go-playground/validator.v8 v8.15.1 // indirect
-	gopkg.in/yaml.v2 v2.0.0-20160301204022-a83829b6f129
+	gopkg.in/yaml.v2 v2.3.0
 )
