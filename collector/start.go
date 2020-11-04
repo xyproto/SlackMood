@@ -4,7 +4,7 @@ import (
 	"time"
 
 	log "github.com/sirupsen/logrus"
-	"github.com/xyproto/slackmood/slack"
+	"github.com/xyproto/emojimood/slack"
 )
 
 // Start the emoji collector

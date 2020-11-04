@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/xyproto/slackmood/emojiRanks"
+	"github.com/xyproto/emojimood/emojiRanks"
 )
 
 // Mood represents the team's mood for a given duration

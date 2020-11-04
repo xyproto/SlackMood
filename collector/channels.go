@@ -3,7 +3,7 @@ package collector
 import (
 	log "github.com/sirupsen/logrus"
 	api "github.com/nlopes/slack"
-	"github.com/xyproto/slackmood/slack"
+	"github.com/xyproto/emojimood/slack"
 )
 
 var channelList []api.Channel

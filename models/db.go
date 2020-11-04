@@ -2,7 +2,7 @@ package models
 
 import(
   "github.com/boltdb/bolt"
-  "github.com/xyproto/slackmood/config"
+  "github.com/xyproto/emojimood/config"
 )
 
 var db *bolt.DB

@@ -6,10 +6,10 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/voxelbrain/goptions"
 
-	"github.com/xyproto/slackmood/collector"
-	"github.com/xyproto/slackmood/config"
-	"github.com/xyproto/slackmood/models"
-	"github.com/xyproto/slackmood/web"
+	"github.com/xyproto/emojimood/collector"
+	"github.com/xyproto/emojimood/config"
+	"github.com/xyproto/emojimood/models"
+	"github.com/xyproto/emojimood/web"
 )
 
 type options struct {

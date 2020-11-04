@@ -7,8 +7,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 	api "github.com/nlopes/slack"
-	"github.com/xyproto/slackmood/models"
-	"github.com/xyproto/slackmood/slack"
+	"github.com/xyproto/emojimood/models"
+	"github.com/xyproto/emojimood/slack"
 )
 
 // Fetch each channel in sequence and get the messages

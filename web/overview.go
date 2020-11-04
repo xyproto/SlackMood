@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/xyproto/slackmood/models"
+	"github.com/xyproto/emojimood/models"
 )
 
 type timePeriod struct {

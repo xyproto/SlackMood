@@ -1,4 +1,4 @@
-#SlackMood
+# Emoji mood
 
 This is a fork of [SlackMood](https://github.com/YoSmudge/SlackMood) (MIT licensed).
 
@@ -25,4 +25,4 @@ Install dependencies with Glide and create the static assets
 Then build and run
 
     go build
-    ./slackmood --config ./config.yml --bind :3044
+    ./emojimood --config ./config.yml --bind :3044
