@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/xyproto/emojimood/emojiRanks"
+	"github.com/xyproto/emojimood/rankings"
 )
 
 // Mood represents the team's mood for a given duration

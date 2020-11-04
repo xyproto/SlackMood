@@ -19,10 +19,10 @@ type Rank struct{
 var EmojiRanks []Rank
 
 func init(){
-  loadFiles := []string{"custom.csv", "standard.csv"}
+  loadFiles := []string{"rankings.csv"} // custom.csv", "standard.csv"}
 
   for _,f := range loadFiles{
-    fp := path.Join("emojiRanks", f)
+    fp := path.Join("rankings", f)
     fc, err := os.Open(fp)
     if err != nil {
       log.WithFields(log.Fields{
