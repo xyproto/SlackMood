@@ -1,0 +1,3 @@
+slack_token: "xoxb-999999-999999-asdfasdfasdf"
+db_path: "db/db.bolt"
+rank_file: "config/rank.csv"
