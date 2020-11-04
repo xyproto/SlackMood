@@ -3,8 +3,8 @@ package happyteam
 import (
 	"fmt"
 
-	api "github.com/slack-go/slack"
 	log "github.com/sirupsen/logrus"
+	api "github.com/slack-go/slack"
 )
 
 // Slack represents a connection to a Slack server

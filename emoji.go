@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/boltdb/bolt"
-	api "github.com/slack-go/slack"
 	log "github.com/sirupsen/logrus"
+	api "github.com/slack-go/slack"
 )
 
 var emojiList EmojiList

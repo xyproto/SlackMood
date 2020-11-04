@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	api "github.com/slack-go/slack"
 	log "github.com/sirupsen/logrus"
+	api "github.com/slack-go/slack"
 )
 
 // Fetch each channel in sequence and get the messages
