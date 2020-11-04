@@ -12,7 +12,7 @@ func Connect() (*Slack, error) {
 	s.Api = api.New(Config.SlackToken)
 	auth, err := s.Api.AuthTest()
 	if err != nil {
-		return &s, fmt.Errorf("Error authenticating with Slack: %s", err)
+		return &s, fmt.Errorf("error authenticating with Slack: %s", err)
 	}
 
 	log.WithFields(log.Fields{

@@ -26,7 +26,7 @@ func updateChannels(s *Slack, ts time.Time) {
 		wg.Add(1)
 
 		go getChannelHistory(s, c, &ts, &wg)
-		if 0 == i%10 {
+		if i%10 == 0 {
 			wg.Wait()
 		}
 	}

@@ -17,11 +17,9 @@ func channels(s *Slack) {
 			"error": err,
 		}).Warning("Could not fetch channels from Slack")
 	} else {
+		// TODO: Why not "channelList = chn" ?
 		var allChannels []api.Channel
-		for _, channel := range chn {
-			allChannels = append(allChannels, channel)
-		}
-
+		allChannels = append(allChannels, chn...)
 		channelList = allChannels
 	}
 

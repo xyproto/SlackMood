@@ -12,7 +12,7 @@ var Config config
 func LoadConfig(filePath string) error {
 	Config = config{}
 	if _, err := os.Stat(filePath); os.IsNotExist(err) {
-		return fmt.Errorf("Config file not found")
+		return fmt.Errorf("config file not found: " + filePath)
 	}
 
 	configContent, err := ioutil.ReadFile(filePath)
@@ -22,7 +22,7 @@ func LoadConfig(filePath string) error {
 
 	err = yaml.Unmarshal(configContent, &Config)
 	if err != nil {
-		return fmt.Errorf("Error parsing config file: %s", err)
+		return fmt.Errorf("error parsing config file: %s", err)
 	}
 
 	return nil
