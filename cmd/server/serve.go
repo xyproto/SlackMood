@@ -38,7 +38,11 @@ func Render(c *gin.Context, filePath string, obj map[string]interface{}) {
 }
 
 // Serve sets up handlers and starts serving
-func Serve(bind string, emojiRank *happyteam.EmojiRanks) error {
+func Serve(bind string, emojiRank *happyteam.EmojiRanks, debugMode bool) error {
+	if !debugMode {
+		gin.SetMode(gin.ReleaseMode)
+	}
+
 	var router = gin.New()
 	router.Use(gin.Recovery())
 	router.GET("/", Overview(emojiRank))

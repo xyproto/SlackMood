@@ -18,6 +18,8 @@ type options struct {
 	goptions.Verbs
 }
 
+var debugMode = false
+
 func main() {
 
 	parsedOptions := options{}
@@ -65,5 +67,5 @@ func main() {
 	}
 
 	// Serve!
-	log.Fatalln(Serve(parsedOptions.Bind, emojiRanks))
+	log.Fatalln(Serve(parsedOptions.Bind, emojiRanks, debugMode))
 }
