@@ -14,7 +14,7 @@ This is a fork of [SlackMood](https://github.com/YoSmudge/SlackMood) (MIT licens
 
 ## Running
 
-First create `config.yml`, containing your Slack bot token and a path to the BoltDB file:
+First create `config/config.yml`, containing your Slack bot token and a path to the BoltDB file:
 
 ```
 slack_token: "abcd"
@@ -24,7 +24,7 @@ rank_file: "config/rank.csv"
 
 Then run:
 
-    ./server --config config.yml --bind :3044
+    ./server -b :8000
 
 ## General info
 
