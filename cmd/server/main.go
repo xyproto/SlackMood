@@ -46,16 +46,18 @@ func main() {
 		os.Exit(1)
 	}
 
+	// Open Bolt database
+	if err := config.OpenDB(); err != nil {
+		log.WithFields(log.Fields{
+			"error": err,
+		}).Error("Could not open database: " + config.DBPath)
+		return
+	}
+
+	// Load emoji rankings
 	emojiRanks, err := config.LoadRanks()
 	if err != nil {
 		log.Fatalln(err)
-	}
-
-	if err := config.OpenDB; err != nil {
-		log.WithFields(log.Fields{
-			"error": err,
-		}).Error("Could not open database")
-		return
 	}
 
 	if !config.StartEmojiCollector() {
