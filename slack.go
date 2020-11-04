@@ -3,7 +3,7 @@ package happyteam
 import (
 	"fmt"
 
-	api "github.com/nlopes/slack"
+	api "github.com/slack-go/slack"
 	log "github.com/sirupsen/logrus"
 )
 
