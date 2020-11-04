@@ -11,7 +11,7 @@ This is a fork of [SlackMood](https://github.com/YoSmudge/SlackMood) (MIT licens
 
 ## Building
 
-    go build -mod=vendor
+    cd cmd/server && go build -mod=vendor
 
 ## Running
 
@@ -25,7 +25,7 @@ rank_file: "config/rank.csv"
 
 Then run:
 
-    ./happyteam --config config.yml --bind :3044
+    ./server --config config.yml --bind :3044
 
 ## General info
 
