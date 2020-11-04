@@ -1,10 +1,8 @@
-package models
+package emojigo
 
 import (
 	"fmt"
 	"time"
-
-	"github.com/xyproto/emojimood/rankings"
 )
 
 // Mood represents the team's mood for a given duration
@@ -36,7 +34,7 @@ func GetMood(emoji []*Emoji) Mood {
 	m := Mood{}
 
 	for _, e := range emoji {
-		for _, r := range ranks.EmojiRanks {
+		for _, r := range EmojiRanks {
 			if r.Name == e.Name {
 				switch r.Rank {
 				case 1:

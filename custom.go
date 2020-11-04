@@ -1,12 +1,11 @@
-package collector
+package emojigo
 
 import (
 	log "github.com/sirupsen/logrus"
-	"github.com/xyproto/emojimood/slack"
 )
 
 // Loads the custom emoji for the team
-func customEmoji(s *slack.Slack) {
+func customEmoji(s *Slack) {
 	log.Debug("Fetching custom emoji")
 
 	emoji, err := s.Api.GetEmoji()

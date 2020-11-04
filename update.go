@@ -1,18 +1,16 @@
-package collector
+package emojigo
 
 import (
 	"strconv"
 	"sync"
 	"time"
 
-	log "github.com/sirupsen/logrus"
 	api "github.com/nlopes/slack"
-	"github.com/xyproto/emojimood/models"
-	"github.com/xyproto/emojimood/slack"
+	log "github.com/sirupsen/logrus"
 )
 
 // Fetch each channel in sequence and get the messages
-func updateChannels(s *slack.Slack, ts time.Time) {
+func updateChannels(s *Slack, ts time.Time) {
 	channels := channelList
 	log.WithFields(log.Fields{
 		"channels": len(channels),
@@ -34,7 +32,7 @@ func updateChannels(s *slack.Slack, ts time.Time) {
 	}
 }
 
-func getChannelHistory(s *slack.Slack, c api.Channel, ts *time.Time, wg *sync.WaitGroup) {
+func getChannelHistory(s *Slack, c api.Channel, ts *time.Time, wg *sync.WaitGroup) {
 	defer wg.Done()
 
 	hp := api.NewHistoryParameters()
@@ -49,7 +47,7 @@ func getChannelHistory(s *slack.Slack, c api.Channel, ts *time.Time, wg *sync.Wa
 			"channel":   c,
 		}).Warning("Could not fetch channel history")
 	} else {
-		models.ParseEmoji(h.Messages)
+		ParseEmoji(h.Messages)
 
 		log.WithFields(log.Fields{
 			"channel":   c.Name,

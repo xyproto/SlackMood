@@ -1,11 +1,11 @@
-package web
+package main
 
 import (
 	"encoding/json"
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/xyproto/emojimood/models"
+	"github.com/xyproto/emojimood"
 )
 
 type timePeriod struct {

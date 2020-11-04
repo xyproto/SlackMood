@@ -6,10 +6,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/voxelbrain/goptions"
 
-	"github.com/xyproto/emojimood/collector"
-	"github.com/xyproto/emojimood/config"
-	"github.com/xyproto/emojimood/models"
-	"github.com/xyproto/emojimood/web"
+	"github.com/xyproto/emojimood"
 )
 
 type options struct {
@@ -39,7 +36,7 @@ func main() {
 
 	log.Debug("Logging verbosely!")
 
-	err := config.LoadConfig(parsedOptions.Config)
+	err := emojimood.LoadConfig(parsedOptions.Config)
 	if err != nil {
 		log.WithFields(log.Fields{
 			"configFile": parsedOptions.Config,
@@ -48,7 +45,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	err = models.OpenDB()
+	err = emojimood.OpenDB()
 	if err != nil {
 		log.WithFields(log.Fields{
 			"error": err,

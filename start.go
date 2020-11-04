@@ -1,16 +1,15 @@
-package collector
+package emojigo
 
 import (
 	"time"
 
 	log "github.com/sirupsen/logrus"
-	"github.com/xyproto/emojimood/slack"
 )
 
 // Start the emoji collector
 // Connects to Slack and starts streaming all public channels
 func Start() bool {
-	s, err := slack.Connect()
+	s, err := Connect()
 	if err != nil {
 		log.WithFields(log.Fields{
 			"error": err,
@@ -24,7 +23,7 @@ func Start() bool {
 	return true
 }
 
-func collector(s *slack.Slack) {
+func collector(s *Slack) {
 	oldest := time.Now().Add(-30 * 24 * time.Hour)
 	channels(s)
 	updateChannels(s, oldest)

@@ -1,15 +1,14 @@
-package collector
+package emojigo
 
 import (
-	log "github.com/sirupsen/logrus"
 	api "github.com/nlopes/slack"
-	"github.com/xyproto/emojimood/slack"
+	log "github.com/sirupsen/logrus"
 )
 
 var channelList []api.Channel
 
 // Get a list of all the channels
-func channels(s *slack.Slack) {
+func channels(s *Slack) {
 	log.Debug("Fetching channels")
 
 	chn, err := s.Api.GetChannels(false)

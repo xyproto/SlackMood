@@ -1,4 +1,4 @@
-package models
+package emojigo
 
 import (
 	"encoding/json"
@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"time"
 
-	log "github.com/sirupsen/logrus"
 	"github.com/boltdb/bolt"
 	api "github.com/nlopes/slack"
+	log "github.com/sirupsen/logrus"
 )
 
 var emojiList EmojiList
