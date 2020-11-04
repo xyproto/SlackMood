@@ -2,6 +2,8 @@ package emojimood
 
 import (
 	"github.com/boltdb/bolt"
+
+	log "github.com/sirupsen/logrus"
 )
 
 var db *bolt.DB
@@ -19,6 +21,10 @@ func (config *Config) OpenDB() error {
 		tx.CreateBucketIfNotExists([]byte("emoji"))
 		return nil
 	})
+
+	log.WithFields(log.Fields{
+		"filename": config.DBPath,
+	}).Info("Loaded database")
 
 	return nil
 }
