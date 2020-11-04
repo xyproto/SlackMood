@@ -26,6 +26,8 @@ db_path: "db/db.bolt"
 rank_file: "config/rank.csv"
 ```
 
+Use your own Slack token, for a Slack bot. Creating a Slack token may be tricky, and may involve creating both an app and a bot user and also giving it permissions. Slack have made it as complicated as possible.
+
 Then run:
 
     ./server -b :8000
