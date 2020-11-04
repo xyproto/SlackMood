@@ -1,4 +1,4 @@
-package emojigo
+package emojimood
 
 import (
 	"github.com/boltdb/bolt"

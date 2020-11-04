@@ -43,14 +43,14 @@ func Overview(c *gin.Context) {
 		return
 	}
 
-	mood := models.GetMood(models.FilterEmoji(time.Now().UTC().Add(period.Period*-1), time.Now().UTC(), models.AllEmoji()))
-	graphData := models.GraphMood(period.Period, period.Breakdown)
+	mood := emojimood.GetMood(emojimood.FilterEmoji(time.Now().UTC().Add(period.Period*-1), time.Now().UTC(), emojimood.AllEmoji()))
+	graphData := emojimood.GraphMood(period.Period, period.Breakdown)
 	graphJSON, _ := json.Marshal(graphData)
 
 	Render(c, "overview.html", gin.H{
 		"currentMood":   mood,
 		"timePeriods":   timePeriods,
 		"moodGraphJson": string(graphJSON),
-		"totalEmoji":    len(models.AllEmoji()),
+		"totalEmoji":    len(emojimood.AllEmoji()),
 	})
 }

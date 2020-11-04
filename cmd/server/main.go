@@ -19,9 +19,11 @@ type options struct {
 }
 
 func main() {
+	emojimood.LoadRankings("config/rankings.csv")
+
 	parsedOptions := options{}
 
-	parsedOptions.Config = "./config.yml"
+	parsedOptions.Config = "config/config.yml"
 	parsedOptions.Bind = os.Getenv("WEB_BIND")
 
 	goptions.ParseAndFail(&parsedOptions)
@@ -53,8 +55,9 @@ func main() {
 		return
 	}
 
-	if !collector.Start() {
+	if !emojimood.StartEmojiCollector() {
 		os.Exit(1)
 	}
-	web.Start(parsedOptions.Bind)
+
+	Serve(parsedOptions.Bind)
 }

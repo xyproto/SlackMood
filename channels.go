@@ -1,4 +1,4 @@
-package emojigo
+package emojimood
 
 import (
 	api "github.com/nlopes/slack"

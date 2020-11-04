@@ -1,4 +1,4 @@
-package emojigo
+package emojimood
 
 import (
 	log "github.com/sirupsen/logrus"

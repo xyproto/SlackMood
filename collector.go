@@ -1,4 +1,4 @@
-package emojigo
+package emojimood
 
 import (
 	"time"
@@ -8,7 +8,7 @@ import (
 
 // Start the emoji collector
 // Connects to Slack and starts streaming all public channels
-func Start() bool {
+func StartEmojiCollector() bool {
 	s, err := Connect()
 	if err != nil {
 		log.WithFields(log.Fields{

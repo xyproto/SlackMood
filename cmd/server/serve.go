@@ -3,18 +3,10 @@ package main
 import (
 	"io/ioutil"
 
-	log "github.com/sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 	"github.com/hoisie/mustache"
+	log "github.com/sirupsen/logrus"
 )
-
-var router = gin.New()
-
-func Start(bind string) {
-	router.Use(gin.Recovery())
-	router.GET("/", Overview)
-	router.Run(bind)
-}
 
 func Render(c *gin.Context, filePath string, obj map[string]interface{}) {
 	//templateData, err := Asset(filePath)
@@ -43,4 +35,11 @@ func Render(c *gin.Context, filePath string, obj map[string]interface{}) {
 		}
 		c.Writer.Write([]byte(html))
 	}
+}
+
+func Serve(bind string) {
+	var router = gin.New()
+	router.Use(gin.Recovery())
+	router.GET("/", Overview)
+	router.Run(bind)
 }

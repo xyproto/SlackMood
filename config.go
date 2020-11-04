@@ -1,4 +1,4 @@
-package emojigo
+package emojimood
 
 type config struct {
 	SlackToken string `yaml:"slack_token"`
