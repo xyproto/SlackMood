@@ -4,6 +4,10 @@ Measure the mood of your team, judging by emoji usage on Slack.
 
 This is a fork of [SlackMood](https://github.com/YoSmudge/SlackMood) (MIT licensed, no development since 2016).
 
+THIS IS A WORK IN PROGRESS since many of the Slack API calls have been deprecated since 2016.
+
+Pull requests are welcome.
+
 [![Build Status](https://travis-ci.com/xyproto/happyteam.svg?branch=master)](https://travis-ci.com/xyproto/happyteam)
 
 ![](https://s3.amazonaws.com/f.cl.ly/items/0E3W453j2I44451b441x/Screen%20Shot%202016-05-31%20at%2015.01.18.png?v=7d9a7302)
