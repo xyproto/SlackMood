@@ -1,4 +1,6 @@
-# Emoji mood
+# Emoji Mood
+
+[![Build Status](https://travis-ci.com/xyproto/emojimood.svg?branch=master)](https://travis-ci.com/xyproto/emojimood)
 
 Measure the mood of your team, juding by emoji usage on Slack!
 
