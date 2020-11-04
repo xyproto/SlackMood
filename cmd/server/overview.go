@@ -22,35 +22,40 @@ var timePeriods = []timePeriod{
 	timePeriod{"90d", time.Hour * 24 * 90, time.Hour * 24 * 7, false},
 }
 
-// Overview does something
-func Overview(c *gin.Context) {
-	periods := timePeriods
-	period := timePeriod{}
+// Overview returns a gin handler that renders overview.html
+// and fills it with a graph
+func Overview(emojiRank *emojimood.EmojiRanks) func(*gin.Context) {
 
-	var validPeriod bool
-	periodName := c.DefaultQuery("period", timePeriods[2].Name)
-	for i, p := range periods {
-		periods[i].Active = false
-		if p.Name == periodName {
-			validPeriod = true
-			period = p
-			periods[i].Active = true
+	return func(c *gin.Context) {
+		periods := timePeriods
+		period := timePeriod{}
+
+		var validPeriod bool
+		periodName := c.DefaultQuery("period", timePeriods[2].Name)
+		for i, p := range periods {
+			periods[i].Active = false
+			if p.Name == periodName {
+				validPeriod = true
+				period = p
+				periods[i].Active = true
+			}
 		}
+
+		if !validPeriod {
+			c.String(410, "Invalid Period")
+			return
+		}
+
+		mood := emojiRank.GetMood(emojimood.FilterEmoji(time.Now().UTC().Add(period.Period*-1), time.Now().UTC(), emojimood.AllEmoji()))
+		graphData := emojiRank.GraphMood(period.Period, period.Breakdown)
+		graphJSON, _ := json.Marshal(graphData)
+
+		Render(c, "overview.html", gin.H{
+			"currentMood":   mood,
+			"timePeriods":   timePeriods,
+			"moodGraphJson": string(graphJSON),
+			"totalEmoji":    len(emojimood.AllEmoji()),
+		})
+
 	}
-
-	if !validPeriod {
-		c.String(410, "Invalid Period")
-		return
-	}
-
-	mood := emojimood.GetMood(emojimood.FilterEmoji(time.Now().UTC().Add(period.Period*-1), time.Now().UTC(), emojimood.AllEmoji()))
-	graphData := emojimood.GraphMood(period.Period, period.Breakdown)
-	graphJSON, _ := json.Marshal(graphData)
-
-	Render(c, "overview.html", gin.H{
-		"currentMood":   mood,
-		"timePeriods":   timePeriods,
-		"moodGraphJson": string(graphJSON),
-		"totalEmoji":    len(emojimood.AllEmoji()),
-	})
 }

@@ -22,7 +22,7 @@ type Rank struct {
 type EmojiRanks []Rank
 
 // LoadRanks loads the rank CSV file
-func (config *Config) LoadRanks() ([]Rank, error) {
+func (config *Config) LoadRanks() (*EmojiRanks, error) {
 	var emojiRanks EmojiRanks
 	fc, err := os.Open(config.RankFile)
 	if err != nil {
@@ -50,5 +50,5 @@ func (config *Config) LoadRanks() ([]Rank, error) {
 		"emoji": len(emojiRanks),
 	}).Info("Loaded emoji rankings")
 
-	return emojiRanks, nil
+	return &emojiRanks, nil
 }

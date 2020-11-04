@@ -19,7 +19,6 @@ type options struct {
 }
 
 func main() {
-	emojimood.LoadRankings("config/rankings.csv")
 
 	parsedOptions := options{}
 
@@ -38,7 +37,7 @@ func main() {
 
 	log.Debug("Logging verbosely!")
 
-	err := emojimood.LoadConfig(parsedOptions.Config)
+	config, err := emojimood.LoadConfig(parsedOptions.Config)
 	if err != nil {
 		log.WithFields(log.Fields{
 			"configFile": parsedOptions.Config,
@@ -47,17 +46,22 @@ func main() {
 		os.Exit(1)
 	}
 
-	err = emojimood.OpenDB()
+	emojiRanks, err := config.LoadRanks()
 	if err != nil {
+		log.Fatalln(err)
+	}
+
+	if err := config.OpenDB; err != nil {
 		log.WithFields(log.Fields{
 			"error": err,
 		}).Error("Could not open database")
 		return
 	}
 
-	if !emojimood.StartEmojiCollector() {
+	if !config.StartEmojiCollector() {
 		os.Exit(1)
 	}
 
-	Serve(parsedOptions.Bind)
+	// Serve!
+	log.Fatalln(Serve(parsedOptions.Bind, emojiRanks))
 }
