@@ -1,5 +1,7 @@
 #SlackMood
 
+This is a fork of [SlackMood](https://github.com/YoSmudge/SlackMood) (MIT licensed).
+
 Gauge the average mood of your Slack based on Emoji use.
 
 ![](https://s3.amazonaws.com/f.cl.ly/items/0E3W453j2I44451b441x/Screen%20Shot%202016-05-31%20at%2015.01.18.png?v=7d9a7302)
