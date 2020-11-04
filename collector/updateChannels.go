@@ -5,10 +5,10 @@ import (
 	"sync"
 	"time"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	api "github.com/nlopes/slack"
-	"github.com/yosmudge/slackmood/models"
-	"github.com/yosmudge/slackmood/slack"
+	"github.com/xyproto/slackmood/models"
+	"github.com/xyproto/slackmood/slack"
 )
 
 // Fetch each channel in sequence and get the messages

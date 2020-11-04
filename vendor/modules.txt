@@ -1,6 +1,5 @@
 # github.com/Sirupsen/logrus v0.10.1-0.20160524132453-6d9ae300aaf8
 ## explicit
-github.com/Sirupsen/logrus
 # github.com/boltdb/bolt v1.2.1
 ## explicit
 github.com/boltdb/bolt
@@ -18,20 +17,19 @@ github.com/hoisie/mustache
 # github.com/manucorporat/sse v0.0.0-20160126180136-ee05b128a739
 ## explicit
 github.com/manucorporat/sse
+# github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e
+## explicit
 # github.com/nlopes/slack v0.0.2-0.20160430160449-e337a7316d3f
 ## explicit
 github.com/nlopes/slack
+# github.com/sirupsen/logrus v1.7.0
+## explicit
+github.com/sirupsen/logrus
+# github.com/stretchr/testify v1.6.1
+## explicit
 # github.com/voxelbrain/goptions v0.0.0-20151102231003-26cb8b046923
 ## explicit
 github.com/voxelbrain/goptions
-# github.com/yosmudge/slackmood v0.0.0-20160827163541-596bc6397505
-## explicit
-github.com/yosmudge/slackmood/collector
-github.com/yosmudge/slackmood/config
-github.com/yosmudge/slackmood/emojiRanks
-github.com/yosmudge/slackmood/models
-github.com/yosmudge/slackmood/slack
-github.com/yosmudge/slackmood/web
 # golang.org/x/net v0.0.0-20160126033523-f315505cf334
 ## explicit
 golang.org/x/net/context
@@ -40,6 +38,11 @@ golang.org/x/net/websocket
 ## explicit
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
+golang.org/x/sys/windows
+# gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b
+## explicit
+# gopkg.in/go-playground/assert.v1 v1.2.1
+## explicit
 # gopkg.in/go-playground/validator.v8 v8.15.1
 ## explicit
 gopkg.in/go-playground/validator.v8

@@ -1,8 +1,8 @@
 package collector
 
 import (
-	log "github.com/Sirupsen/logrus"
-	"github.com/yosmudge/slackmood/slack"
+	log "github.com/sirupsen/logrus"
+	"github.com/xyproto/slackmood/slack"
 )
 
 // Loads the custom emoji for the team

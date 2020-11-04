@@ -3,8 +3,8 @@ package slack
 import(
   "fmt"
   api "github.com/nlopes/slack"
-  log "github.com/Sirupsen/logrus"
-  "github.com/yosmudge/slackmood/config"
+  log "github.com/sirupsen/logrus"
+  "github.com/xyproto/slackmood/config"
 )
 
 func Connect() (*Slack, error){

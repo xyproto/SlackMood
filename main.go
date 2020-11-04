@@ -3,13 +3,13 @@ package main
 import (
 	"os"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/voxelbrain/goptions"
 
-	"github.com/yosmudge/slackmood/collector"
-	"github.com/yosmudge/slackmood/config"
-	"github.com/yosmudge/slackmood/models"
-	"github.com/yosmudge/slackmood/web"
+	"github.com/xyproto/slackmood/collector"
+	"github.com/xyproto/slackmood/config"
+	"github.com/xyproto/slackmood/models"
+	"github.com/xyproto/slackmood/web"
 )
 
 type options struct {

@@ -1,9 +1,9 @@
 package collector
 
 import (
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	api "github.com/nlopes/slack"
-	"github.com/yosmudge/slackmood/slack"
+	"github.com/xyproto/slackmood/slack"
 )
 
 var channelList []api.Channel

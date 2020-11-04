@@ -8,7 +8,7 @@ import(
   "strings"
   "strconv"
   "encoding/csv"
-  log "github.com/Sirupsen/logrus"
+  log "github.com/sirupsen/logrus"
 )
 
 type Rank struct{
