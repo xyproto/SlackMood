@@ -1,4 +1,4 @@
-module github.com/xyproto/emojimood
+module github.com/xyproto/happyteam
 
 go 1.15
 

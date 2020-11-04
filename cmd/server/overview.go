@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/xyproto/emojimood"
+	"github.com/xyproto/happyteam"
 )
 
 type timePeriod struct {
@@ -24,7 +24,7 @@ var timePeriods = []timePeriod{
 
 // Overview returns a gin handler that renders overview.html
 // and fills it with a graph
-func Overview(emojiRank *emojimood.EmojiRanks) func(*gin.Context) {
+func Overview(emojiRank *happyteam.EmojiRanks) func(*gin.Context) {
 
 	return func(c *gin.Context) {
 		periods := timePeriods
@@ -46,7 +46,7 @@ func Overview(emojiRank *emojimood.EmojiRanks) func(*gin.Context) {
 			return
 		}
 
-		mood := emojiRank.GetMood(emojimood.FilterEmoji(time.Now().UTC().Add(period.Period*-1), time.Now().UTC(), emojimood.AllEmoji()))
+		mood := emojiRank.GetMood(happyteam.FilterEmoji(time.Now().UTC().Add(period.Period*-1), time.Now().UTC(), happyteam.AllEmoji()))
 		graphData := emojiRank.GraphMood(period.Period, period.Breakdown)
 		graphJSON, _ := json.Marshal(graphData)
 
@@ -54,7 +54,7 @@ func Overview(emojiRank *emojimood.EmojiRanks) func(*gin.Context) {
 			"currentMood":   mood,
 			"timePeriods":   timePeriods,
 			"moodGraphJson": string(graphJSON),
-			"totalEmoji":    len(emojimood.AllEmoji()),
+			"totalEmoji":    len(happyteam.AllEmoji()),
 		})
 
 	}

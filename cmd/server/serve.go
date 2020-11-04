@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/hoisie/mustache"
 	log "github.com/sirupsen/logrus"
-	"github.com/xyproto/emojimood"
+	"github.com/xyproto/happyteam"
 )
 
 // Render is a gin handler that renders and returns main.html
@@ -38,7 +38,7 @@ func Render(c *gin.Context, filePath string, obj map[string]interface{}) {
 }
 
 // Serve sets up handlers and starts serving
-func Serve(bind string, emojiRank *emojimood.EmojiRanks) error {
+func Serve(bind string, emojiRank *happyteam.EmojiRanks) error {
 	var router = gin.New()
 	router.Use(gin.Recovery())
 	router.GET("/", Overview(emojiRank))

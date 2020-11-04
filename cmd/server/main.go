@@ -6,7 +6,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/voxelbrain/goptions"
 
-	"github.com/xyproto/emojimood"
+	"github.com/xyproto/happyteam"
 )
 
 type options struct {
@@ -37,7 +37,7 @@ func main() {
 
 	log.Debug("Logging verbosely!")
 
-	config, err := emojimood.LoadConfig(parsedOptions.Config)
+	config, err := happyteam.LoadConfig(parsedOptions.Config)
 	if err != nil {
 		log.WithFields(log.Fields{
 			"configFile": parsedOptions.Config,

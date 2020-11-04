@@ -1,4 +1,4 @@
-package emojimood
+package happyteam
 
 // UserEmojis represents emoji usage per user
 type UserEmojis struct {

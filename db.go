@@ -1,4 +1,4 @@
-package emojimood
+package happyteam
 
 import (
 	"github.com/boltdb/bolt"

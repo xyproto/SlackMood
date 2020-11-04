@@ -1,4 +1,4 @@
-package emojimood
+package happyteam
 
 import (
 	log "github.com/sirupsen/logrus"

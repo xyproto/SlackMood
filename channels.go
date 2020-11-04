@@ -1,4 +1,4 @@
-package emojimood
+package happyteam
 
 import (
 	api "github.com/nlopes/slack"

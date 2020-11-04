@@ -1,6 +1,6 @@
-# Emoji Mood
+# Happy Team
 
-[![Build Status](https://travis-ci.com/xyproto/emojimood.svg?branch=master)](https://travis-ci.com/xyproto/emojimood)
+[![Build Status](https://travis-ci.com/xyproto/happyteam.svg?branch=master)](https://travis-ci.com/xyproto/happyteam)
 
 Measure the mood of your team, juding by emoji usage on Slack!
 
@@ -18,14 +18,15 @@ First create `config.yml`, containing your Slack bot token and a path to the Bol
 
 ```
 slack_token: "abcd"
-db_path: "./db.bolt"
+db_path: "db/db.bolt"
+rank_file: "config/rank.csv"
 ```
 
 Then run:
 
-    ./emojimood --config config.yml --bind :3044
+    ./happyteam --config config.yml --bind :3044
 
 ## General info
 
-* Version: 0.0.1
+* Version: 1.0.0
 * License: MIT
