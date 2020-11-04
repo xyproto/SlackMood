@@ -26,7 +26,7 @@ func (config *Config) StartEmojiCollector() bool {
 func collector(s *Slack) {
 	oldest := time.Now().Add(-30 * 24 * time.Hour)
 	channels(s)
-	updateChannels(s, oldest)
+	updateConversations(s, oldest)
 	oldest = time.Now()
 
 	ticker := time.NewTicker(15 * time.Minute)
@@ -36,7 +36,7 @@ func collector(s *Slack) {
 		}).Info("Running collector")
 
 		channels(s)
-		updateChannels(s, oldest)
+		updateConversations(s, oldest)
 		oldest = time.Now()
 	}
 

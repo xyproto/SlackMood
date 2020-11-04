@@ -11,19 +11,17 @@ var channelList []api.Channel
 func channels(s *Slack) {
 	log.Debug("Fetching channels")
 
-	chn, err := s.API.GetChannels(false)
+	params := &api.GetConversationsParameters{}
+	channels, _, err := s.API.GetConversations(params)
 	if err != nil {
 		log.WithFields(log.Fields{
 			"error": err,
 		}).Warning("Could not fetch channels from Slack")
-	} else {
-		// TODO: Why not "channelList = chn" ?
-		var allChannels []api.Channel
-		allChannels = append(allChannels, chn...)
-		channelList = allChannels
 	}
 
 	log.WithFields(log.Fields{
-		"channels": len(channelList),
+		"channels": len(channels),
 	}).Debug("Updated channel list")
+
+	channelList = channels
 }

@@ -10,7 +10,7 @@ import (
 )
 
 // Fetch each channel in sequence and get the messages
-func updateChannels(s *Slack, ts time.Time) {
+func updateConversations(s *Slack, ts time.Time) {
 	channels := channelList
 	log.WithFields(log.Fields{
 		"channels": len(channels),
@@ -25,20 +25,22 @@ func updateChannels(s *Slack, ts time.Time) {
 		i++
 		wg.Add(1)
 
-		go getChannelHistory(s, c, &ts, &wg)
+		go getConversationHistory(s, c, &ts, &wg)
 		if i%10 == 0 {
 			wg.Wait()
 		}
 	}
 }
 
-func getChannelHistory(s *Slack, c api.Channel, ts *time.Time, wg *sync.WaitGroup) {
+func getConversationHistory(s *Slack, c api.Channel, ts *time.Time, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	hp := api.NewHistoryParameters()
-	hp.Oldest = strconv.FormatInt(ts.Unix(), 10)
-	hp.Count = 1000
-	h, err := s.API.GetChannelHistory(c.ID, hp)
+	params := &api.GetConversationHistoryParameters{}
+	params.ChannelID = c.ID
+	params.Oldest = strconv.FormatInt(ts.Unix(), 10)
+	params.Limit = 1000
+
+	h, err := s.API.GetConversationHistory(params)
 
 	if err != nil {
 		log.WithFields(log.Fields{
