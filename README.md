@@ -1,7 +1,6 @@
 # Happy Team
 
-
-Measure the mood of your team, juding by emoji usage on Slack!
+Measure the mood of your team, judging by emoji usage on Slack.
 
 This is a fork of [SlackMood](https://github.com/YoSmudge/SlackMood) (MIT licensed, no development since 2016).
 
